@@ -1,0 +1,22 @@
+<h1>List of users</h1>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="users">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>UserName</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" style="cursor: pointer" [routerLink]="['/albums', user.id]">
+      <td>{{ user.id }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>

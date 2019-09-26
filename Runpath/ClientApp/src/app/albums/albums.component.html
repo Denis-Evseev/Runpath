@@ -1,0 +1,18 @@
+<h1>List of albums. User Id: {{userId}}</h1>
+
+<p *ngIf="!albums"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="albums">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let album of albums" [routerLink]="['/photos', album.id]">
+      <td>{{ album.id }}</td>
+      <td>{{ album.title }}</td>
+    </tr>
+  </tbody>
+</table>

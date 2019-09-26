@@ -1,0 +1,19 @@
+<h1>Denis Evseev. Test project</h1>
+
+<p>The application provides simplified version of SPA together with .Net Core</p>
+
+<p><em>Please proceed to the <a routerLink="users"> list of users </a>...</em></p>
+
+<hr />
+
+Choose user id: <input [(ngModel)]="userId" />
+<button (click)="downloadAlbumAndPhotos(userId)">Download</button>
+
+<p *ngIf="!jsonResult">
+  Loading...
+</p>
+
+<p *ngIf="jsonResult">
+  Result: <br />
+  {{jsonResult | json }}
+</p>

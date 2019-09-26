@@ -1,0 +1,9 @@
+<h1>List of photos. Album Id: {{albumId}}</h1>
+
+<p *ngIf="!photos"><em>Loading...</em></p>
+
+<div *ngFor="let photo of photos" style=" width: 20%; float: left; text-align: center; margin-bottom: 5px;    font-size: 12px;
+    padding: 0 20px; height: 200px;">
+  <img src="{{photo.thumbnailUrl}}" />
+  {{ photo.title }}
+</div>
